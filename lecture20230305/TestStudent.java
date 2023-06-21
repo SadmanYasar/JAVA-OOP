@@ -1,13 +1,42 @@
+// Name: Sadman Yasar Sayem
+// Matric: A21EC3052
+
+// Name: Amyzal Muhammad Zikrullah Bin Yahya
+// Matric: A21EC8004
+
 public class TestStudent {
     public static void main(String[] args) {
         System.out.println("Test Student Class\n\n");
-        Student s1 = new Student("Ahmad", 72);
-        Student s2 = new Student("John", 63);
-        Student s3 = new Student("Kim", 81);
+
+        String[][] data = {
+                { "John", "85" },
+                { "Sarah", "92" },
+                { "Michael", "78" },
+                { "Emma", "95" },
+                { "David", "88" },
+                { "Olivia", "90" },
+                { "James", "82" },
+                { "Sophia", "87" },
+                { "William", "91" },
+                { "Isabella", "89" }
+        };
+
+        Student[] students = new Student[data.length];
+
+        for (int i = 0; i < data.length; i++) {
+            for (int j = 0; j < data.length; j++) {
+                String name = data[i][0];
+                int mark = Integer.parseInt(data[i][1]);
+
+                students[i] = new Student(name, mark);
+            }
+        }
+
         System.out.println("Student marks:");
-        System.out.println(s1.getName() + " - " + s1.getMark());
-        System.out.println(s2.getName() + " - " + s2.getMark());
-        System.out.println(s3.getName() + " - " + s3.getMark());
+
+        for (int i = 0; i < students.length; i++) {
+            System.out.println(students[i].getName() + " - " + students[i].getMark());
+        }
     }
 }
 
